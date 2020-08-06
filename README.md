@@ -12,6 +12,9 @@
 
 The Elastic Path Commerce Cloud Catalog Syndication Utilities are a flexible set of scripts built on Elastic Path’s RESTful e-commerce API that assist with pushing products, collections, categories and brands to external services from Elastic Path Commerce Cloud. The utilities use the e-commerce capabilities provided by Elastic Path Commerce Cloud and transacts data in a RESTful manner.
 
+The Catalog Syndication Utilities currently support pushing to:
+- Algolia
+
 ## Documentation 📖
 
 ### Prerequisites
@@ -27,7 +30,7 @@ Before you begin, ensure that you have the following accounts set up:
 3. Create at least 1 Category (Catalogue -> Categories)
 4. Create at least 1 Collection (Catalogue -> Collections)
 5. Link your Product(s) to the appropriate category, brand and collection(s). All categories, brands and collections created MUST be linked to at least 1 product.
-s
+
 ### Development tools
 
 An Elastic Path Commerce Cloud Catalog Syndication Utilities development environment requires the following software:
@@ -60,7 +63,7 @@ cd catalog-syndication
 # Install all the dependencies for all sub-project and create necessary symlinks in-between them
 yarn
 
-# Configure the .env file.
+# Create and configure the .env file.
 # For more information, see Configuration Parameter Descriptions.
 
 # Executes the script to perform the syndication:
@@ -72,15 +75,14 @@ yarn clean
 
 ## Configuration Parameter Descriptions ⚙️
 
-Parameters that require configuration are in the `.env` file:
+Parameters that require configuration must be added to the `/catalog-syndication/.env` file:
 
-|  Parameter| Importance|Type|Description|
-|--|--|--|--|
-|`ELASTICPATH_CLIENT_ID`| Required| String| The Client ID of your store.|
-|`ALGOLIA_INDEX_NAME`| Required| String| Name of Algolia index used for search functions.|
-|`ALGOLIA_APP_ID`| Required| String| Algolia application identifier.|
-|`ALGOLIA_ADMIN_KEY`| Required| String| Algolia administrative API key used to modify records.|
-|`ALGOLIA_API_KEY`| Required| String| Algolia API key used to read records.|
+|Service|  Parameter| Importance|Type|Description|
+|--|--|--|--|--|
+|Algolia|`ELASTICPATH_CLIENT_ID`| Required| String| The Client ID of your store.|
+|  |`ALGOLIA_INDEX_NAME`| Required| String| Name of Algolia index used for search functions.|
+|  |`ALGOLIA_APP_ID`| Required| String| Algolia application identifier.|
+|  |`ALGOLIA_ADMIN_KEY`| Required| String| Algolia administrative API key used to modify records.|
 
 ## Contributors ✨
 
