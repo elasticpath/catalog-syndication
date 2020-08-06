@@ -57,13 +57,13 @@ To customize and extend the utilities, you need knowledge in the following techn
 # Clone the Git repository
 git clone https://github.com/elasticpath/catalog-syndication.git
 
-# Go into the cloned directory
-cd catalog-syndication
+# Go into the cloned directory, and the utility subdirectory
+cd catalog-syndication/push-catalog-to-<service>
 
 # Install all the dependencies for all sub-project and create necessary symlinks in-between them
 yarn
 
-# Create and configure the .env file.
+# In the root directory, create an .env file and add the required variables with your account information.
 # For more information, see Configuration Parameter Descriptions.
 
 # Executes the script to perform the syndication:
