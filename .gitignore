@@ -1,7 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-push-catalog-to-algolia/node_modules/
+**node_modules/
 /.pnp
 .pnp.js
 
@@ -23,15 +23,15 @@ yarn-debug.log*
 yarn-error.log*
 
 # environment variables
-push-catalog-to-algolia/.env
+.env
 
 # gatsby files
-push-catalog-to-algolia/.cache/
-push-catalog-to-algolia/public
+**.cache/
+**public
 
 # Logs
-push-catalog-to-algolia/logs
-push-catalog-to-algolia/*.log
-push-catalog-to-algolia/npm-debug.log*
-push-catalog-to-algolia/yarn-debug.log*
-push-catalog-to-algolia/yarn-error.log*
+**logs
+**.log
+**.log*
+**.log*
+**yarn-error.log*

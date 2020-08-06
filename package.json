@@ -1,0 +1,6 @@
+{
+    "scripts": {
+        "push-catalog-to-algolia": "cd push-catalog-to-algolia && gatsby build",
+        "clean-push-catalog-to-algolia": "cd push-catalog-to-algolia && gatsby clean"
+    }
+}
