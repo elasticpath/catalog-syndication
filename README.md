@@ -53,10 +53,8 @@ cd catalog-syndication
 # Install all the dependencies for all sub-project and create necessary symlinks in-between them
 yarn
 
-# Configure the ./src/config.ts file.
+# Configure the .env file.
 # For more information, see Configuration Parameter Descriptions.
-
-# Start the app in development mode
 
 # Executes the script to perform the syndication:
 yarn build
@@ -64,14 +62,15 @@ yarn build
 
 ## Configuration Parameter Descriptions ⚙️
 
-Parameters that require configuration are in the `./src/config.ts` file:
+Parameters that require configuration are in the `.env` file:
 
 |  Parameter| Importance|Type|Description|
 |--|--|--|--|
-|`clientId`| Required| String| The Client ID of your store.|
-|`algoliaAppId`| Required| String| Algolia application identifier.|
-|`algoliaApiKey`| Required| String| Algolia API key used to read records.|
-|`algoliaIndexName`| Required| String| Name of Algolia index used for search functions.|
+|`ELASTICPATH_CLIENT_ID`| Required| String| The Client ID of your store.|
+|`ALGOLIA_INDEX_NAME`| Required| String| Name of Algolia index used for search functions.|
+|`ALGOLIA_APP_ID`| Required| String| Algolia application identifier.|
+|`ALGOLIA_ADMIN_KEY`| Required| String| Algolia administrative API key used to modify records.|
+|`ALGOLIA_API_KEY`| Required| String| Algolia API key used to read records.|
 
 ## Contributors ✨
 
@@ -82,10 +81,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/shaunmaharaj"><img src="https://avatars3.githubusercontent.com/u/39800563?v=4" width="100px;" alt=""/><br /><sub><b>Shaun Maharaj</b></sub></a><br /><a href="https://github.com/elasticpath/epcc-react-pwa-reference-storefront/commits?author=shaunmaharaj" title="Code">💻</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/rostyk-kanafotskyy"><img src="https://avatars3.githubusercontent.com/u/34774987?v=4" width="100px;" alt=""/><br /><sub><b>Rostyk</b></sub></a><br /><a href="https://github.com/elasticpath/epcc-react-pwa-reference-storefront/commits?author=rostyk-kanafotskyy" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Yilin-W"><img src="https://avatars1.githubusercontent.com/u/64274391?s=400&v=4" width="100px;" alt=""/><br /><sub><b>Yilin-W
+</b></sub></a><br /><a href="https://github.com/elasticpath/catalog-syndication/commits?author=Yilin-W" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/shaunmaharaj"><img src="https://avatars3.githubusercontent.com/u/39800563?v=4" width="100px;" alt=""/><br /><sub><b>Shaun Maharaj</b></sub></a><br /><a href="https://github.com/elasticpath/catalog-syndication/commits?author=shaunmaharaj" title="Code">💻</a></td>
   </tr>
 </table>
 
