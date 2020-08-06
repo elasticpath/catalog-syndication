@@ -1,8 +1,0 @@
-{
-    "scripts": {
-        "build": "cd push-catalog-to-algolia && gatsby build",
-        "clean": "cd push-catalog-to-algolia && gatsby clean",
-        "dev": "cd push-catalog-to-algolia && gatsby develop",
-        "format": "cd push-catalog-to-algolia && prettier --write \"src/**/*.js\""
-      }
-}
