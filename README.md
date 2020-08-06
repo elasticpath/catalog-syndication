@@ -21,6 +21,13 @@ Before you begin, ensure that you have the following accounts set up:
 - [Elastic Path Commerce Cloud account](https://dashboard.elasticpath.com/login)
 - [Algolia account](https://www.algolia.com/) - Algolia is supported for syndicating products, collections, categories and brands to.
 
+#### Configure Catalog
+1. Create at least 1 Product (Catalogue -> Products). Ensure you have an image uploaded for the product, and the status of the product is set to Live.
+2. Create at least 1 Brand (Catalogue -> Brands)
+3. Create at least 1 Category (Catalogue -> Categories)
+4. Create at least 1 Collection (Catalogue -> Collections)
+5. Link your Product(s) to the appropriate category, brand and collection(s). All categories, brands and collections created MUST be linked to at least 1 product.
+s
 ### Development tools
 
 An Elastic Path Commerce Cloud Catalog Syndication Utilities development environment requires the following software:
@@ -58,6 +65,9 @@ yarn
 
 # Executes the script to perform the syndication:
 yarn build
+
+# Cleans the project if any errors encountered, prior to re-building:
+yarn clean
 ```
 
 ## Configuration Parameter Descriptions ⚙️
