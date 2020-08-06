@@ -12,6 +12,9 @@
 
 The Elastic Path Commerce Cloud Catalog Syndication Utilities are a flexible set of scripts built on Elastic Path’s RESTful e-commerce API that assist with pushing products, collections, categories and brands to external services from Elastic Path Commerce Cloud. The utilities use the e-commerce capabilities provided by Elastic Path Commerce Cloud and transacts data in a RESTful manner.
 
+The Catalog Syndication Utilities currently support pushing to:
+- Algolia
+
 ## Documentation 📖
 
 ### Prerequisites
@@ -20,6 +23,13 @@ Before you begin, ensure that you have the following accounts set up:
 
 - [Elastic Path Commerce Cloud account](https://dashboard.elasticpath.com/login)
 - [Algolia account](https://www.algolia.com/) - Algolia is supported for syndicating products, collections, categories and brands to.
+
+#### Configure Catalog
+1. Create at least 1 Product (Catalogue -> Products). Ensure you have an image uploaded for the product, and the status of the product is set to Live.
+2. Create at least 1 Brand (Catalogue -> Brands)
+3. Create at least 1 Category (Catalogue -> Categories)
+4. Create at least 1 Collection (Catalogue -> Collections)
+5. Link your Product(s) to the appropriate category, brand and collection(s). All categories, brands and collections created MUST be linked to at least 1 product.
 
 ### Development tools
 
@@ -47,31 +57,32 @@ To customize and extend the utilities, you need knowledge in the following techn
 # Clone the Git repository
 git clone https://github.com/elasticpath/catalog-syndication.git
 
-# Go into the cloned directory
-cd catalog-syndication
+# Go into the cloned directory, and the utility subdirectory
+cd catalog-syndication/push-catalog-to-<service>
 
 # Install all the dependencies for all sub-project and create necessary symlinks in-between them
 yarn
 
-# Configure the ./src/config.ts file.
+# In the root directory, create an .env file and add the required variables with your account information.
 # For more information, see Configuration Parameter Descriptions.
-
-# Start the app in development mode
 
 # Executes the script to perform the syndication:
 yarn build
+
+# Cleans the project if any errors encountered, prior to re-building:
+yarn clean
 ```
 
 ## Configuration Parameter Descriptions ⚙️
 
-Parameters that require configuration are in the `./src/config.ts` file:
+Parameters that require configuration must be added to the `/catalog-syndication/.env` file:
 
-|  Parameter| Importance|Type|Description|
-|--|--|--|--|
-|`clientId`| Required| String| The Client ID of your store.|
-|`algoliaAppId`| Required| String| Algolia application identifier.|
-|`algoliaApiKey`| Required| String| Algolia API key used to read records.|
-|`algoliaIndexName`| Required| String| Name of Algolia index used for search functions.|
+|Service|  Parameter| Importance|Type|Description|
+|--|--|--|--|--|
+|Algolia|`ELASTICPATH_CLIENT_ID`| Required| String| The Client ID of your store.|
+|  |`ALGOLIA_INDEX_NAME`| Required| String| Name of Algolia index used for search functions.|
+|  |`ALGOLIA_APP_ID`| Required| String| Algolia application identifier.|
+|  |`ALGOLIA_ADMIN_KEY`| Required| String| Algolia administrative API key used to modify records.|
 
 ## Contributors ✨
 
@@ -82,10 +93,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/shaunmaharaj"><img src="https://avatars3.githubusercontent.com/u/39800563?v=4" width="100px;" alt=""/><br /><sub><b>Shaun Maharaj</b></sub></a><br /><a href="https://github.com/elasticpath/epcc-react-pwa-reference-storefront/commits?author=shaunmaharaj" title="Code">💻</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/rostyk-kanafotskyy"><img src="https://avatars3.githubusercontent.com/u/34774987?v=4" width="100px;" alt=""/><br /><sub><b>Rostyk</b></sub></a><br /><a href="https://github.com/elasticpath/epcc-react-pwa-reference-storefront/commits?author=rostyk-kanafotskyy" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Yilin-W"><img src="https://avatars1.githubusercontent.com/u/64274391?s=400&v=4" width="100px;" alt=""/><br /><sub><b>Yilin-W
+</b></sub></a><br /><a href="https://github.com/elasticpath/catalog-syndication/commits?author=Yilin-W" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/shaunmaharaj"><img src="https://avatars3.githubusercontent.com/u/39800563?v=4" width="100px;" alt=""/><br /><sub><b>Shaun Maharaj</b></sub></a><br /><a href="https://github.com/elasticpath/catalog-syndication/commits?author=shaunmaharaj" title="Code">💻</a></td>
   </tr>
 </table>
 
