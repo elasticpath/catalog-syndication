@@ -95,6 +95,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/Yilin-W"><img src="https://avatars1.githubusercontent.com/u/64274391?s=400&v=4" width="100px;" alt=""/><br /><sub><b>Yilin-W
 </b></sub></a><br /><a href="https://github.com/elasticpath/catalog-syndication/commits?author=Yilin-W" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/mwan-ep"><img src="https://avatars3.githubusercontent.com/u/54115904?v=4" width="100px;" alt=""/><br /><sub><b>Michelle Wan</b></sub></a><br /><a href="https://github.com/elasticpath/catalog-syndication/commits?author=mwan-ep" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/shaunmaharaj"><img src="https://avatars3.githubusercontent.com/u/39800563?v=4" width="100px;" alt=""/><br /><sub><b>Shaun Maharaj</b></sub></a><br /><a href="https://github.com/elasticpath/catalog-syndication/commits?author=shaunmaharaj" title="Code">💻</a></td>
   </tr>
 </table>
