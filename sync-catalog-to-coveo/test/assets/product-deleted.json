@@ -1,0 +1,23 @@
+{
+  "id": "5bde7408-60a3-4532-9688-baac2748fcb3",
+  "triggered_by": "product.deleted",
+  "attempt": 1,
+  "integration": {
+    "id": "e672cf7b-870b-49e5-96fd-462492e772fb",
+    "integration_type": "webhook",
+    "name": "test-int",
+    "description": "testint"
+  },
+  "resources": {
+    "id": "2d415618-f75d-4c0a-bae0-09307d2a73bc",
+    "type": "product"
+  },
+  "payload": {
+    "type": "product",
+    "id": "2d415618-f75d-4c0a-bae0-09307d2a73bc"
+  },
+  "configuration": {
+    "secret_key": "",
+    "url": "https://webhook.site/d3d0e983-40ab-4a66-b0cb-3a3ca82b9336"
+  }
+}
