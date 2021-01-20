@@ -86,7 +86,7 @@ yarn dev
 ngrok http 3000
 ```
 
-### Create the Elastic Path Webhook
+### Create the Elastic Path Commerce Cloud Webhook
 
 You must now tell Elastic Path Commerce Cloud the ngrok URL above. Head to the [Elastic Path Commerce Cloud Dashboard](https://dashboard.moltin.com/app/settings/integrations).
 
