@@ -1,0 +1,50 @@
+{
+  "data": {
+    "id": "3c953b61-36be-425b-943b-cf569e9cf082",
+    "type": "product",
+    "name": "foo",
+    "slug": "foo",
+    "sku": "foo",
+    "manage_stock": false,
+    "description": "BAR",
+    "price": [
+      {
+        "amount": 12399,
+        "currency": "USD",
+        "includes_tax": true
+      }
+    ],
+    "status": "live",
+    "commodity_type": "physical",
+    "meta": {
+      "timestamps": {
+        "created_at": "2020-10-13T20:35:26+00:00",
+        "updated_at": "2020-10-13T20:37:00+00:00"
+      },
+      "display_price": {
+        "with_tax": {
+          "amount": 12399,
+          "currency": "USD",
+          "formatted": "$123.99"
+        },
+        "without_tax": {
+          "amount": 12399,
+          "currency": "USD",
+          "formatted": "$123.99"
+        }
+      },
+      "stock": {
+        "level": 2578967,
+        "availability": "in-stock"
+      },
+      "variation_matrix": []
+    },
+    "weight": {
+      "g": 0,
+      "kg": 0,
+      "lb": 0,
+      "oz": 0
+    },
+    "relationships": {}
+  }
+}

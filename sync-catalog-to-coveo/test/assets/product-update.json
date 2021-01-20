@@ -1,0 +1,66 @@
+{
+  "id": "7d646038-5e85-4ac6-b312-f92e0a81e7bb",
+  "triggered_by": "product.updated",
+  "attempt": 1,
+  "integration": {
+    "id": "3cb04fb8-a1b8-455e-a7ba-946230300b98",
+    "integration_type": "webhook",
+    "name": "test-integration",
+    "description": "test"
+  },
+  "resources": "{\"data\":{\"id\":\"3c953b61-36be-425b-943b-cf569e9cf082\",\"type\":\"product\",\"name\":\"foo\",\"slug\":\"foo\",\"sku\":\"foo\",\"manage_stock\":false,\"description\":\"BAR\",\"price\":[{\"amount\":12399,\"currency\":\"USD\",\"includes_tax\":true}],\"status\":\"live\",\"commodity_type\":\"physical\",\"meta\":{\"timestamps\":{\"created_at\":\"2020-10-13T20:35:26+00:00\",\"updated_at\":\"2020-10-13T20:37:00+00:00\"},\"display_price\":{\"with_tax\":{\"amount\":12399,\"currency\":\"USD\",\"formatted\":\"$123.99\"},\"without_tax\":{\"amount\":12399,\"currency\":\"USD\",\"formatted\":\"$123.99\"}},\"stock\":{\"level\":2578967,\"availability\":\"in-stock\"},\"variation_matrix\":[]},\"weight\":{\"g\":0,\"kg\":0,\"lb\":0,\"oz\":0},\"relationships\":{}}}",
+  "payload": {
+    "data": {
+      "id": "3c953b61-36be-425b-943b-cf569e9cf082",
+      "type": "product",
+      "name": "foo",
+      "slug": "foo",
+      "sku": "foo",
+      "manage_stock": false,
+      "description": "BAR",
+      "price": [
+        {
+          "amount": 12399,
+          "currency": "USD",
+          "includes_tax": true
+        }
+      ],
+      "status": "live",
+      "commodity_type": "physical",
+      "meta": {
+        "timestamps": {
+          "created_at": "2020-10-13T20:35:26+00:00",
+          "updated_at": "2020-10-13T20:37:00+00:00"
+        },
+        "display_price": {
+          "with_tax": {
+            "amount": 12399,
+            "currency": "USD",
+            "formatted": "$123.99"
+          },
+          "without_tax": {
+            "amount": 12399,
+            "currency": "USD",
+            "formatted": "$123.99"
+          }
+        },
+        "stock": {
+          "level": 2578967,
+          "availability": "in-stock"
+        },
+        "variation_matrix": []
+      },
+      "weight": {
+        "g": 0,
+        "kg": 0,
+        "lb": 0,
+        "oz": 0
+      },
+      "relationships": {}
+    }
+  },
+  "configuration": {
+    "secret_key": "somesecret",
+    "url": "https://webhook.site/d3d0e983-40ab-4a66-b0cb-3a3ca82b9336?testkey=test"
+  }
+}
