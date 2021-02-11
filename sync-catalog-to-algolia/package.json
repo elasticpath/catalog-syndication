@@ -1,0 +1,34 @@
+{
+  "scripts": {
+    "clean": "rimraf $(find . -name 'node_modules' -type d)",
+    "test": "npx mocha ./test",
+    "dev": "micro-dev",
+    "start": "micro",
+    "format": "prettier --write \"**/*.js\""
+  },
+  "dependencies": {
+    "micro": "9.3.4",
+    "micro-cors": "0.1.1",
+    "@moltin/sdk": "^4.0.2",
+    "node-fetch": "^2.6.0",
+    "algoliasearch": "3.35.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "micro-dev": "3.0.0",
+    "mocha": "^8.0.1",
+    "ncp": "^2.0.0",
+    "prettier": "1.19.1",
+    "rimraf": "^3.0.2",
+    "sinon": "^9.0.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "prettier --write"
+  }
+}
