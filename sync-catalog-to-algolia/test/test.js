@@ -7,7 +7,7 @@ const {
   transformProductForAlgolia,
   updateProductInAlgolia,
   fetchProductWithIncludes
-} = require("../index.js");
+} = require("../helpers.js");
 const { mockMoltinClient, sameShapeAs } = require("./helpers");
 const productCreatedEvent = require("./assets/product-created.json");
 const productDeletedEvent = require("./assets/product-deleted.json");
@@ -36,7 +36,7 @@ describe("updateProductInAlgolia", () => {
   });
 
   describe("product deleted", async () => {
-    const webhookEvent = productDeletedEvent.body;
+    const webhookEvent = JSON.parse(productDeletedEvent.body);
     const productId = "156987f2-4f5c-4f89-8951-99f4f90d6b4b";
 
     it("passes the product ID into algoliaClient -> index -> deleteObject", async () => {
@@ -63,7 +63,7 @@ describe("updateProductInAlgolia", () => {
   });
 
   describe("product created", async () => {
-    const webhookEvent = productCreatedEvent.body;
+    const webhookEvent = JSON.parse(productCreatedEvent.body);
 
     it("calls algoliaClient -> index -> addObject", async () => {
       await updateProductInAlgolia({
@@ -103,7 +103,7 @@ describe("updateProductInAlgolia", () => {
   });
 
   describe("product updated", async () => {
-    const webhookEvent = productUpdatedEvent.body;
+    const webhookEvent = JSON.parse(productUpdatedEvent.body);
 
     it("calls algoliaClient -> index -> saveObject", async () => {
       await updateProductInAlgolia({
