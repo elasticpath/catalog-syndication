@@ -69,7 +69,10 @@ yarn
 # In the root directory, create an .env file and add the required variables with your account information.
 # For more information, see Configuration Parameter Descriptions.
 ```
-#### For Algolia
+### Push catalog
+The `push-catalog-to-algolia` module performs catalog syndication once and need to be run whenever you want to push the catalog to the search provider. This is useful for pushing up large catalogs where the catalog has already been created on Elastic Path Commerce Cloud but the catalog has not previously been synced. 
+
+#### For `push-catalog-to-algolia`
 ```bash
 # Executes the script to perform the syndication:
 yarn build
@@ -77,7 +80,9 @@ yarn build
 # Cleans the project if any errors encountered, prior to re-building:
 yarn clean
 ```
-#### For Coveo
+### Sync Catalog
+The `sync-catalog-to-algolia` and `sync-catalog-to-coveo` modules perform catalog syndication via a webhook. When products are created/updated/deleted the webhook is triggered and the catalog is synced.
+#### For `sync-catalog-to-algolia` / `sync-catalog-to-coveo`
 ```bash
 # Start the server for the function, the server will typically start on PORT `3000`, if not, make a note for the next step.
 yarn dev
@@ -97,7 +102,7 @@ You must now tell Elastic Path Commerce Cloud the ngrok URL above. Head to the [
 5. Check `created`/`updated`/`deleted` observables for Product.
 6. Click `Save`.
 
-### Create the Coveo Resources
+### Create the Coveo Resources (Coveo Only)
 Login to the [Coveo Administration Console](https://platform.cloud.coveo.com/admin).
 
 #### Create fields
