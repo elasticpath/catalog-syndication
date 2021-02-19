@@ -12,7 +12,7 @@
 
 The Elastic Path Commerce Cloud Catalog Syndication Utilities are a flexible set of scripts built on Elastic Path’s RESTful e-commerce API that assist with pushing products, collections, categories and brands to external services from Elastic Path Commerce Cloud. The utilities use the e-commerce capabilities provided by Elastic Path Commerce Cloud and transacts data in a RESTful manner.
 
-The Catalog Syndication Utilities currently support pushing to:
+The Catalog Syndication Utilities currently support pushing/syncing to:
 - Algolia
 - Coveo
 
@@ -23,15 +23,9 @@ The Catalog Syndication Utilities currently support pushing to:
 Before you begin, ensure that you have the following accounts set up:
 
 - [Elastic Path Commerce Cloud account](https://dashboard.elasticpath.com/login)
-- [Algolia account](https://www.algolia.com/) - Algolia is supported for syndicating products, collections, categories and brands to.
-- [Coveo account](https://www.coveo.com/en) - Coveo is supported for syndicating products only.
-
-#### Configure Catalog
-1. Create at least 1 Product (Catalogue -> Products). Ensure you have an image uploaded for the product, and the status of the product is set to Live.
-2. Create at least 1 Brand (Catalogue -> Brands)
-3. Create at least 1 Category (Catalogue -> Categories)
-4. Create at least 1 Collection (Catalogue -> Collections)
-5. Link your Product(s) to the appropriate category, brand and collection(s). All categories, brands and collections created MUST be linked to at least 1 product.
+- The search provider you will be utilizing:
+  - [Algolia account](https://www.algolia.com/) - Algolia is supported for syndicating products, collections, categories and brands to.
+  - [Coveo account](https://www.coveo.com/en) - Coveo is supported for syndicating products only.
 
 ### Development tools
 
@@ -61,7 +55,7 @@ To customize and extend the utilities, you need knowledge in the following techn
 git clone https://github.com/elasticpath/catalog-syndication.git
 
 # Go into the cloned directory, and the utility subdirectory
-cd catalog-syndication/push-catalog-to-<service>
+cd catalog-syndication/<module>
 
 # Install all the dependencies for all sub-project and create necessary symlinks in-between them
 yarn
@@ -69,172 +63,12 @@ yarn
 # In the root directory, create an .env file and add the required variables with your account information.
 # For more information, see Configuration Parameter Descriptions.
 ```
-### Push catalog
-The `push-catalog-to-algolia` module performs catalog syndication once and need to be run whenever you want to push the catalog to the search provider. This is useful for pushing up large catalogs where the catalog has already been created on Elastic Path Commerce Cloud but the catalog has not previously been synced. 
 
-#### For `push-catalog-to-algolia`
-```bash
-# Executes the script to perform the syndication:
-yarn build
-
-# Cleans the project if any errors encountered, prior to re-building:
-yarn clean
-```
-### Sync Catalog
-The `sync-catalog-to-algolia` and `sync-catalog-to-coveo` modules perform catalog syndication via a webhook. When products are created/updated/deleted the webhook is triggered and the catalog is synced.
-#### For `sync-catalog-to-algolia` / `sync-catalog-to-coveo`
-```bash
-# Start the server for the function, the server will typically start on PORT `3000`, if not, make a note for the next step.
-yarn dev
-
-# Start ngrok, This will expose PORT `3000` to the outside world. Make a note of the `http` URL ngrok provides.
-ngrok http 3000
-```
-
-### Create the Elastic Path Commerce Cloud Webhook
-
-You must now tell Elastic Path Commerce Cloud the ngrok URL above. Head to the [Elastic Path Commerce Cloud Dashboard](https://dashboard.moltin.com/app/settings/integrations).
-
-1. login and go to `Settings > Integrations` and click `Create`.
-2. Enter a name and description for your Integration.
-3. Enter the ngrok http URL in the `URL` field.
-4. Enter the `ELASTICPATH_WEBHOOK_SECRET` from the `.env` file(this can be any random string) in the `Secret Key` field.
-5. Check `created`/`updated`/`deleted` observables for Product.
-6. Click `Save`.
-
-### Create the Coveo Resources (Coveo Only)
-Login to the [Coveo Administration Console](https://platform.cloud.coveo.com/admin).
-
-#### Create fields
-1. Navigate to `Content > Fields`.
-2. Click `Add field`.
-3. Fill in the details referencing the following JSON
-4. Repeat for all of the following fields:
-```
-[
-  {
-    "name": "productid",
-    "description": "",
-    "type": "STRING",
-    "facet": true
-  },
-  {
-    "name": "objecttype",
-    "description": "",
-    "type": "STRING",
-    "facet": true
-  },
-  {
-    "name": "name",
-    "description": "",
-    "type": "STRING",
-    "facet": true
-  },
-  {
-    "name": "sku",
-    "description": "",
-    "type": "STRING"
-  },
-  {
-    "name": "description",
-    "description": "",
-    "type": "STRING",
-    "facet": true
-  },
-  {
-    "name": "body",
-    "description": "",
-    "type": "STRING"
-  },
-  {
-    "name": "objectid",
-    "description": "The EPCC ID of the object",
-    "type": "STRING"
-  },
-  {
-    "name": "price",
-    "description": "Display price of the product",
-    "type": "STRING"
-  },
-  {
-    "name": "amount",
-    "description": "Display price of the product",
-    "type": "LONG",
-    "facet": true
-  },
-  {
-    "name": "slug",
-    "description": "Display price of the product",
-    "type": "STRING"
-  },
-  {
-    "name": "brands",
-    "description": "Display price of the product",
-    "type": "STRING",
-    "multiValueFacet": true,
-    "multiValueFacetTokenizers": ";"
-  },
-  {
-    "name": "categories",
-    "description": "Display price of the product",
-    "type": "STRING",
-    "multiValueFacet": true,
-    "multiValueFacetTokenizers": ";"
-  },
-  {
-    "name": "collections",
-    "description": "Display price of the product",
-    "type": "STRING",
-    "multiValueFacet": true,
-    "multiValueFacetTokenizers": ";"
-  },
-  {
-    "name": "imgurl",
-    "description": "Display price of the product",
-    "type": "STRING",
-    "facet": true
-  }
-]
-```
-#### Create a Source
-1. Navigate to `Content > Sources`.
-2. Click `Add source`.
-3. Choose `Push`.
-4. Enter a name for the source.
-5. Click `Add source`.
-
-#### Create Source Mappings
-1. Click on the source you just created, then click `More > Manage Mappings` on the top utility bar.
-2. Click the JSON tab and paste in the following:
-```
-{
-    "common": {
-        "rules": [
-            { "field": "title", "content": [ "%[name]" ] },
-            { "field": "productid", "content": [ "%[id]" ] },
-            { "field": "body", "content": [ "<html><body>%[description]</body></html>" ] }
-    	]
-    },
-    "types": []
-}
-```
-3. Click `Save and rebuild source`.
-
-#### Create a Catalog
-1. Navigate to `Commerce > Catalogs`.
-2. Click `Add catalog`.
-3. Enter a name.
-4. Select the source you created for `Associated Sources`.
-5. Select `Multiple channels` for  `Define your channel`.
-6. Click `Add catalog`.
-
-#### Create an API Key
-1. Navigate to `Organization > API Keys`.
-2. Click `Add key`.
-3. Enter a name for the key.
-4. Under the `Privileges` tab, select `Full access` for the `Preset` dropdown.
-5. Click `Add key`.
-6. Copy and save the key, you won't be able to retrieve it from the console later.
+### Modules
+Refer to specific module `README.md` for specific usage instructions of each module:
+- [push-catalog-to-algolia](./push-catalog-to-algolia/README.md)
+- [sync-catalog-to-algolia](./sync-catalog-to-algolia/README.md)
+- [sync-catalog-to-coveo](./sync-catalog-to-coveo/README.md)
 
 ## Configuration Parameter Descriptions ⚙️
 
