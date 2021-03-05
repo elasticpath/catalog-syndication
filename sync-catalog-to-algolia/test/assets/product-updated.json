@@ -1,0 +1,89 @@
+{
+  "resource": "/algolia/sync-catalog",
+  "path": "/algolia/sync-catalog",
+  "httpMethod": "POST",
+  "headers": {
+      "accept-encoding": "gzip",
+      "content-type": "application/json",
+      "Host": "1s95xbm2fi.execute-api.us-west-2.amazonaws.com",
+      "User-Agent": "moltin/integrations",
+      "X-Amzn-Trace-Id": "Root=1-5f3afba2-c470221846133e6802770cac",
+      "X-Forwarded-For": "63.34.104.89",
+      "X-Forwarded-Port": "443",
+      "X-Forwarded-Proto": "https",
+      "x-moltin-integration-trigger": "product.updated",
+      "x-moltin-secret-key": "8fy2x0btt8wlj868p8uv"
+  },
+  "multiValueHeaders": {
+      "accept-encoding": [
+          "gzip"
+      ],
+      "content-type": [
+          "application/json"
+      ],
+      "Host": [
+          "1s95xbm2fi.execute-api.us-west-2.amazonaws.com"
+      ],
+      "User-Agent": [
+          "moltin/integrations"
+      ],
+      "X-Amzn-Trace-Id": [
+          "Root=1-5f3afba2-c470221846133e6802770cac"
+      ],
+      "X-Forwarded-For": [
+          "63.34.104.89"
+      ],
+      "X-Forwarded-Port": [
+          "443"
+      ],
+      "X-Forwarded-Proto": [
+          "https"
+      ],
+      "x-moltin-integration-trigger": [
+          "product.updated"
+      ],
+      "x-moltin-secret-key": [
+          "8fy2x0btt8wlj868p8uv"
+      ]
+  },
+  "queryStringParameters": null,
+  "multiValueQueryStringParameters": null,
+  "pathParameters": null,
+  "stageVariables": null,
+  "requestContext": {
+      "resourceId": "wo6pe1",
+      "authorizer": {
+          "principalId": "user",
+          "integrationLatency": 769
+      },
+      "resourcePath": "/algolia/sync-catalog",
+      "httpMethod": "POST",
+      "extendedRequestId": "RbxBZF-qPHcF8HA=",
+      "requestTime": "17/Aug/2020:21:50:26 +0000",
+      "path": "/ztd/algolia/sync-catalog",
+      "accountId": "840038280609",
+      "protocol": "HTTP/1.1",
+      "stage": "ztd",
+      "domainPrefix": "1s95xbm2fi",
+      "requestTimeEpoch": 1597701026413,
+      "requestId": "3fd67207-c23a-4390-963f-ed0f458cb465",
+      "identity": {
+          "cognitoIdentityPoolId": null,
+          "accountId": null,
+          "cognitoIdentityId": null,
+          "caller": null,
+          "sourceIp": "63.34.104.89",
+          "principalOrgId": null,
+          "accessKey": null,
+          "cognitoAuthenticationType": null,
+          "cognitoAuthenticationProvider": null,
+          "userArn": null,
+          "userAgent": "moltin/integrations",
+          "user": null
+      },
+      "domainName": "1s95xbm2fi.execute-api.us-west-2.amazonaws.com",
+      "apiId": "1s95xbm2fi"
+  },
+  "body": "{\"id\":\"9ff36fc0-e215-445e-be77-8fd9bcd45e84\",\"triggered_by\":\"product.updated\",\"attempt\":1,\"integration\":{\"id\":\"a07cc6f5-787d-4c9e-97ce-202b10916c19\",\"integration_type\":\"webhook\",\"name\":\"sync-catalog-to-algolia\",\"description\":\"Syncs brands, categories, collections, and products to algolia indices.\"},\"resources\":\"{\\\"data\\\":{\\\"id\\\":\\\"156987f2-4f5c-4f89-8951-99f4f90d6b4b\\\",\\\"type\\\":\\\"product\\\",\\\"name\\\":\\\"testprod\\\",\\\"slug\\\":\\\"testprod\\\",\\\"sku\\\":\\\"testprod\\\",\\\"manage_stock\\\":false,\\\"description\\\":\\\"test\\\",\\\"price\\\":[{\\\"amount\\\":1000,\\\"currency\\\":\\\"USD\\\",\\\"includes_tax\\\":false}],\\\"status\\\":\\\"live\\\",\\\"commodity_type\\\":\\\"physical\\\",\\\"meta\\\":{\\\"timestamps\\\":{\\\"created_at\\\":\\\"2020-08-17T21:50:07+00:00\\\",\\\"updated_at\\\":\\\"2020-08-17T21:50:25+00:00\\\"},\\\"display_price\\\":{\\\"with_tax\\\":{\\\"amount\\\":1000,\\\"currency\\\":\\\"USD\\\",\\\"formatted\\\":\\\"$10.00\\\"},\\\"without_tax\\\":{\\\"amount\\\":1000,\\\"currency\\\":\\\"USD\\\",\\\"formatted\\\":\\\"$10.00\\\"}},\\\"stock\\\":{\\\"level\\\":0,\\\"availability\\\":\\\"out-stock\\\"},\\\"variation_matrix\\\":[]},\\\"weight\\\":{\\\"g\\\":0,\\\"kg\\\":0,\\\"lb\\\":0,\\\"oz\\\":0},\\\"relationships\\\":{}}}\",\"payload\":{\"data\":{\"id\":\"156987f2-4f5c-4f89-8951-99f4f90d6b4b\",\"type\":\"product\",\"name\":\"testprod\",\"slug\":\"testprod\",\"sku\":\"testprod\",\"manage_stock\":false,\"description\":\"test\",\"price\":[{\"amount\":1000,\"currency\":\"USD\",\"includes_tax\":false}],\"status\":\"live\",\"commodity_type\":\"physical\",\"meta\":{\"timestamps\":{\"created_at\":\"2020-08-17T21:50:07+00:00\",\"updated_at\":\"2020-08-17T21:50:25+00:00\"},\"display_price\":{\"with_tax\":{\"amount\":1000,\"currency\":\"USD\",\"formatted\":\"$10.00\"},\"without_tax\":{\"amount\":1000,\"currency\":\"USD\",\"formatted\":\"$10.00\"}},\"stock\":{\"level\":0,\"availability\":\"out-stock\"},\"variation_matrix\":[]},\"weight\":{\"g\":0,\"kg\":0,\"lb\":0,\"oz\":0},\"relationships\":{}}},\"configuration\":{\"secret_key\":\"8fy2x0btt8wlj868p8uv\",\"url\":\"https://1s95xbm2fi.execute-api.us-west-2.amazonaws.com/ztd/algolia/sync-catalog\"}}",
+  "isBase64Encoded": false
+}

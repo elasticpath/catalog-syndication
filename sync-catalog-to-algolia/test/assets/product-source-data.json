@@ -1,0 +1,75 @@
+{
+  "data": {
+    "id": "49c8b607-3631-4073-8654-7fd752fbebb4",
+    "type": "product",
+    "name": "acme-daywear-unisex-button-up",
+    "slug": "acme-daywear-unisex-button-up",
+    "sku": "ACME Daywear Unisex Button-Up",
+    "manage_stock": false,
+    "description": "ACME Daywear Unisex Button-Up. Ho ho ho! He he!",
+    "price": [
+      {
+        "amount": 895,
+        "currency": "USD",
+        "includes_tax": false
+      }
+    ],
+    "status": "live",
+    "commodity_type": "physical",
+    "meta": {
+      "timestamps": {
+        "created_at": "2020-09-02T16:58:13+00:00",
+        "updated_at": "2020-09-16T19:12:19+00:00"
+      },
+      "display_price": {
+        "with_tax": {
+          "amount": 895,
+          "currency": "USD",
+          "formatted": "$8.95"
+        },
+        "without_tax": {
+          "amount": 895,
+          "currency": "USD",
+          "formatted": "$8.95"
+        }
+      },
+      "stock": {
+        "level": 0,
+        "availability": "out-stock"
+      },
+      "variation_matrix": []
+    },
+    "weight": {
+      "g": 0,
+      "kg": 0,
+      "lb": 0,
+      "oz": 0
+    },
+    "relationships": {
+      "categories": {
+        "data": [
+          {
+            "type": "category",
+            "id": "07a02b29-e05e-4d01-9805-9293557802e9"
+          }
+        ]
+      },
+      "collections": {
+        "data": [
+          {
+            "type": "collection",
+            "id": "863c84f6-a32e-4e87-91f8-d3c1ed79b905"
+          }
+        ]
+      },
+      "brands": {
+        "data": [
+          {
+            "type": "brand",
+            "id": "d25432c0-a8ab-4892-a24e-bcdf8b4e4c46"
+          }
+        ]
+      }
+    }
+  }
+}

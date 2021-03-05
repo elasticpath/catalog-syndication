@@ -1,0 +1,89 @@
+{
+  "resource": "/algolia/sync-catalog",
+  "path": "/algolia/sync-catalog",
+  "httpMethod": "POST",
+  "headers": {
+      "accept-encoding": "gzip",
+      "content-type": "application/json",
+      "Host": "1s95xbm2fi.execute-api.us-west-2.amazonaws.com",
+      "User-Agent": "moltin/integrations",
+      "X-Amzn-Trace-Id": "Root=1-5f3afba8-78c2aa2a7969c27e3dd19a8e",
+      "X-Forwarded-For": "34.250.181.5",
+      "X-Forwarded-Port": "443",
+      "X-Forwarded-Proto": "https",
+      "x-moltin-integration-trigger": "product.deleted",
+      "x-moltin-secret-key": "8fy2x0btt8wlj868p8uv"
+  },
+  "multiValueHeaders": {
+      "accept-encoding": [
+          "gzip"
+      ],
+      "content-type": [
+          "application/json"
+      ],
+      "Host": [
+          "1s95xbm2fi.execute-api.us-west-2.amazonaws.com"
+      ],
+      "User-Agent": [
+          "moltin/integrations"
+      ],
+      "X-Amzn-Trace-Id": [
+          "Root=1-5f3afba8-78c2aa2a7969c27e3dd19a8e"
+      ],
+      "X-Forwarded-For": [
+          "34.250.181.5"
+      ],
+      "X-Forwarded-Port": [
+          "443"
+      ],
+      "X-Forwarded-Proto": [
+          "https"
+      ],
+      "x-moltin-integration-trigger": [
+          "product.deleted"
+      ],
+      "x-moltin-secret-key": [
+          "8fy2x0btt8wlj868p8uv"
+      ]
+  },
+  "queryStringParameters": null,
+  "multiValueQueryStringParameters": null,
+  "pathParameters": null,
+  "stageVariables": null,
+  "requestContext": {
+      "resourceId": "wo6pe1",
+      "authorizer": {
+          "principalId": "user",
+          "integrationLatency": 137
+      },
+      "resourcePath": "/algolia/sync-catalog",
+      "httpMethod": "POST",
+      "extendedRequestId": "RbxCXEUyPHcFllA=",
+      "requestTime": "17/Aug/2020:21:50:32 +0000",
+      "path": "/ztd/algolia/sync-catalog",
+      "accountId": "840038280609",
+      "protocol": "HTTP/1.1",
+      "stage": "ztd",
+      "domainPrefix": "1s95xbm2fi",
+      "requestTimeEpoch": 1597701032643,
+      "requestId": "ab2ca586-0c27-41f0-9458-637d9fec14c4",
+      "identity": {
+          "cognitoIdentityPoolId": null,
+          "accountId": null,
+          "cognitoIdentityId": null,
+          "caller": null,
+          "sourceIp": "34.250.181.5",
+          "principalOrgId": null,
+          "accessKey": null,
+          "cognitoAuthenticationType": null,
+          "cognitoAuthenticationProvider": null,
+          "userArn": null,
+          "userAgent": "moltin/integrations",
+          "user": null
+      },
+      "domainName": "1s95xbm2fi.execute-api.us-west-2.amazonaws.com",
+      "apiId": "1s95xbm2fi"
+  },
+  "body": "{\"id\":\"5715eac5-cdde-4024-9c13-1f59c1fdbff7\",\"triggered_by\":\"product.deleted\",\"attempt\":1,\"integration\":{\"id\":\"a07cc6f5-787d-4c9e-97ce-202b10916c19\",\"integration_type\":\"webhook\",\"name\":\"sync-catalog-to-algolia\",\"description\":\"Syncs brands, categories, collections, and products to algolia indices.\"},\"resources\":{\"id\":\"156987f2-4f5c-4f89-8951-99f4f90d6b4b\",\"type\":\"product\"},\"payload\":{\"type\":\"product\",\"id\":\"156987f2-4f5c-4f89-8951-99f4f90d6b4b\"},\"configuration\":{\"secret_key\":\"8fy2x0btt8wlj868p8uv\",\"url\":\"https://1s95xbm2fi.execute-api.us-west-2.amazonaws.com/ztd/algolia/sync-catalog\"}}",
+  "isBase64Encoded": false
+}
