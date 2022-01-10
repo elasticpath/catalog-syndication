@@ -1,6 +1,6 @@
 <img src="https://www.elasticpath.com/themes/custom/bootstrap_sass/logo.svg" alt="" width="400" />
 
-# Catalog Syndication Utilities
+# Catalog Syndication Utilities for v2 Catalog (Legacy)
 
 [![Stable Branch](https://img.shields.io/badge/stable%20branch-master-blue.svg)](https://github.com/elasticpath/catalog-syndication)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
